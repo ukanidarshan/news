@@ -1,20 +1,19 @@
 package com.example.news;
 
-import static androidx.appcompat.graphics.drawable.DrawableContainerCompat.Api21Impl.getResources;
-
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.news.databinding.ActivityNewsscrollerBinding;
+
+import jp.wasabeef.glide.transformations.BlurTransformation;
 
 public class AdapterClass extends RecyclerView.Adapter<AdapterClass.ViewHolder>{
 
@@ -44,11 +43,12 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.ViewHolder>{
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             binding = ActivityNewsscrollerBinding.bind(itemView);
-            Bitmap srcBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.newslogo);
 
-            Glide.with(Recycler.this).load(R.drawable.newslogo)
-                    .bitmapTransform(new MyBlurBuilder().applyBlur(context,srcBitmap,1.5))
-                    .into(binding.imgblur(R.drawable.newslogo);
+            Glide.with(context)
+                    .load(R.drawable.news)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .apply(RequestOptions.bitmapTransform(new BlurTransformation(25, 3)))
+                    .into(binding.imgblur);
         }
     }
 }

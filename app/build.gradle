@@ -47,4 +47,7 @@ dependencies {
     //glide dependency
     implementation 'com.github.bumptech.glide:glide:4.16.0'
 
+    //blur
+    implementation 'jp.wasabeef:glide-transformations:4.0.0'
+
 }
