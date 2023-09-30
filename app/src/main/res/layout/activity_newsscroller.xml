@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/image"
             android:layout_centerInParent="true"
-            android:src="@drawable/news" />
+            android:src="@drawable/newslogo" />
 
     </RelativeLayout>
 </layout>

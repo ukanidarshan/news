@@ -45,7 +45,7 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.ViewHolder>{
             binding = ActivityNewsscrollerBinding.bind(itemView);
 
             Glide.with(context)
-                    .load(R.drawable.news)
+                    .load(R.drawable.newslogo)
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
                     .apply(RequestOptions.bitmapTransform(new BlurTransformation(25, 3)))
                     .into(binding.imgblur);
