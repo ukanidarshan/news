@@ -16,10 +16,10 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(MainActivity.this,Recycler.class));
+                startActivity(new Intent(MainActivity.this, Recycler.class));
                 finish();
             }
-        },1500);
+        }, 1500);
 
 
     }

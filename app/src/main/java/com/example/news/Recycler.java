@@ -13,7 +13,7 @@ public class Recycler extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       binding = DataBindingUtil.setContentView(this,R.layout.activity_recycler);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_recycler);
 
         AdapterClass adapterClass = new AdapterClass();
         binding.rcv.setAdapter(adapterClass);

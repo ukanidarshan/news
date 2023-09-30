@@ -21,35 +21,38 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <ImageView
+                    android:id="@+id/back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/back"
-                    android:id="@+id/back"/>
+                    android:src="@drawable/back" />
+
                 <TextView
+                    android:id="@+id/tvdiscover"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Discover"
-                    android:gravity="center"
                     android:layout_weight="1"
-                    android:id="@+id/tvdiscover"/>
+                    android:gravity="center"
+                    android:text="Discover" />
+
                 <TextView
+                    android:id="@+id/feed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Feed"
                     android:layout_marginRight="15dp"
-                    android:id="@+id/feed"/>
+                    android:text="Feed" />
 
             </LinearLayout>
 
         </androidx.appcompat.widget.Toolbar>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/rcv"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/activity_newsscroller"/>
+            tools:listitem="@layout/activity_newsscroller" />
 
 
     </LinearLayout>
