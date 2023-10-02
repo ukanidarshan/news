@@ -13,11 +13,23 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.news.databinding.ActivityNewsscrollerBinding;
 
+import java.util.ArrayList;
+
 import jp.wasabeef.glide.transformations.BlurTransformation;
 
 public class AdapterClass extends RecyclerView.Adapter<AdapterClass.ViewHolder> {
 
     Context context;
+    private ArrayList<Integer> listI;
+    private ArrayList<String> list;
+    private ArrayList<String> listt;
+
+    public AdapterClass(ArrayList<Integer> listI, ArrayList<String> list, ArrayList<String> listt) {
+
+        this.listI = listI;
+        this.list = list;
+        this.listt = listt;
+    }
 
     @NonNull
     @Override
@@ -31,11 +43,25 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull AdapterClass.ViewHolder holder, int position) {
 
+            holder.binding.image.setImageResource(listI.get(position));
+            holder.binding.tvtitle.setText(listt.get(position));
+            holder.binding.tvnews.setText(list.get(position));
+
+
+            Glide.with(context)
+                    .load(listI.get(position))
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .apply(RequestOptions.bitmapTransform(new BlurTransformation(25, 3)))
+                    .into(holder.binding.imgblur);
+
     }
+
+
+
 
     @Override
     public int getItemCount() {
-        return 3;
+        return list.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -46,11 +72,11 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.ViewHolder> 
             super(itemView);
             binding = ActivityNewsscrollerBinding.bind(itemView);
 
-            Glide.with(context)
-                    .load(R.drawable.newslogo)
-                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .apply(RequestOptions.bitmapTransform(new BlurTransformation(25, 3)))
-                    .into(binding.imgblur);
+
         }
+
     }
+
+
+
 }
