@@ -1,6 +1,7 @@
 package com.example.news;
 
 import android.content.Context;
+import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,12 +24,14 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.ViewHolder> 
     private ArrayList<Integer> listI;
     private ArrayList<String> list;
     private ArrayList<String> listt;
+    private ArrayList<String> linklist;
 
-    public AdapterClass(ArrayList<Integer> listI, ArrayList<String> list, ArrayList<String> listt) {
+    public AdapterClass(ArrayList<Integer> listI, ArrayList<String> list, ArrayList<String> listt, ArrayList<String> linklist) {
 
         this.listI = listI;
         this.list = list;
         this.listt = listt;
+        this.linklist = linklist;
     }
 
     @NonNull
@@ -53,6 +56,14 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.ViewHolder> 
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
                     .apply(RequestOptions.bitmapTransform(new BlurTransformation(25, 3)))
                     .into(holder.binding.imgblur);
+        Glide.with(context)
+                .load(listI.get(position))
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .apply(RequestOptions.bitmapTransform(new BlurTransformation(25, 3)))
+                .into(holder.binding.ivwebblur);
+
+        holder.binding.tvlink.setText(linklist.get(position));
+        Linkify.addLinks(holder.binding.tvlink, Linkify.WEB_URLS);
 
     }
 

@@ -27,6 +27,7 @@ public class Feed extends Fragment {
     ArrayList<String> list = new ArrayList<>();
     ArrayList<String> listt = new ArrayList<>();
     ArrayList<Integer> listI = new ArrayList<>();
+    ArrayList<String> linklist = new ArrayList<>();
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -98,7 +99,18 @@ public class Feed extends Fragment {
         listI.add(R.drawable.new2);
         listI.add(R.drawable.news);
 
-        AdapterClass adapterClass = new AdapterClass(listI,list,listt);
+        String link = "https://timesofindia.indiatimes.com/sports/asian-games-2023/live-updates-of-asian-games-2023-day-8-golf-boxing-athletics-equestrian-shooting-archery-boxing-hockey/liveblog/104076967.cms";
+        linklist.add(link);
+
+        String link1 = "https://www.usnews.com/photos/2021/09/10/from-9-11-until-today-us-military-in-afghanistan";
+        linklist.add(link1);
+
+        String link2 = "https://www.usnews.com/photos/2021/09/10/from-9-11-until-today-us-military-in-afghanistan";
+        linklist.add(link2);
+
+
+
+        AdapterClass adapterClass = new AdapterClass(listI,list,listt,linklist);
         PagerSnapHelper snapHelper = new PagerSnapHelper();
         snapHelper.attachToRecyclerView(binding.rcv);
         binding.rcv.setAdapter(adapterClass);
