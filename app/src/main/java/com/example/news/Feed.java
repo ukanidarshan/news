@@ -114,5 +114,6 @@ public class Feed extends Fragment {
         PagerSnapHelper snapHelper = new PagerSnapHelper();
         snapHelper.attachToRecyclerView(binding.rcv);
         binding.rcv.setAdapter(adapterClass);
+
     }
 }
