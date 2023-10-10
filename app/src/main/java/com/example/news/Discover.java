@@ -56,7 +56,7 @@ public class Discover extends Fragment {
 
         // below method is use to set
         // scroll time in seconds.
-        binding.slider.setScrollTimeInSec(3);
+        binding.slider.setScrollTimeInSec(1);
 
         // to set it scrollable automatically
         // we use below method.
@@ -64,6 +64,9 @@ public class Discover extends Fragment {
 
         // to start autocycle below method is used.
         binding.slider.startAutoCycle();
+
+        CustomAdapter customAdapter = new CustomAdapter();
+
 
     }
 }
