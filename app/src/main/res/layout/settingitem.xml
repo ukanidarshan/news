@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/About"
+            android:layout_margin="20dp">
+
+            <ImageView
+                android:id="@+id/imgv"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/aboutus" />
+
+            <TextView
+                android:id="@+id/tvv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="About"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:layout_gravity="center" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/forward"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

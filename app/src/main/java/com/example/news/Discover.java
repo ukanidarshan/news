@@ -21,6 +21,8 @@ public class Discover extends Fragment {
     FragmentDiscoverBinding binding;
 
     ArrayList<Integer> imglist = new ArrayList<>();
+    ArrayList<Integer> catimg = new ArrayList<>();
+    ArrayList<String> catname = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,17 @@ public class Discover extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        binding.slider.startAutoCycle();
+        catimg.add(R.drawable.google);
+        catimg.add(R.drawable.facebook);
+        catimg.add(R.drawable.twitter);
+
+        catname.add("google");
+        catname.add("facebook");
+        catname.add("twitter");
+
+        CustomAdapter customAdapter = new CustomAdapter(catimg,catname);
+        binding.rcvd.setAdapter(customAdapter);
 
         imglist.add(R.drawable.new2);
         imglist.add(R.drawable.news11);
@@ -63,9 +76,7 @@ public class Discover extends Fragment {
         binding.slider.setAutoCycle(true);
 
         // to start autocycle below method is used.
-        binding.slider.startAutoCycle();
 
-        CustomAdapter customAdapter = new CustomAdapter();
 
 
     }

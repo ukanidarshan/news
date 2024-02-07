@@ -9,7 +9,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.news.databinding.DiscoveritemBinding;
 
+import java.util.ArrayList;
+
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
+    ArrayList<Integer> catimg;
+    ArrayList<String> catname;
+
+    public CustomAdapter(ArrayList<Integer> catimg, ArrayList<String> catname) {
+        this.catimg = catimg;
+        this.catname = catname;
+    }
+
     @NonNull
     @Override
     public CustomAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -20,11 +30,14 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull CustomAdapter.ViewHolder holder, int position) {
 
+        holder.binding.ivCategory.setImageResource(catimg.get(position));
+        holder.binding.tvCategory.setText(catname.get(position));
+
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return catname.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -51,6 +52,14 @@ public class Recycler extends AppCompatActivity {
         binding.viewpage.setAdapter(viewPagerAdapter);
         binding.viewpage.setCurrentItem(1);
         inIt();
+        binding.setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Recycler.this, Setting.class);
+                startActivity(intent);
+
+            }
+        });
 
         // It is used to join TabLayout with ViewPager.
     }

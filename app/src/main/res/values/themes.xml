@@ -2,6 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.News" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
+        <item name="android:colorPrimaryDark">#000000</item>
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
